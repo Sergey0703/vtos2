@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div style ="border: 1px solid blue" class="wrapper">
+<div th:replace="fragments/header::header"></div>
+<main class="main">
+
+<h1>Items</h1>
+<div th:each="item:${items}" class="item">
+     <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> <a href="/themes">Themes</a>
+
+</div>
+
+<br>
+<hr>
+
+<a href="/items/new">Create new</a>
+
+
+</main>
+    <div th:replace="fragments/footer::footer"></div>
+</div>
+</body>
+</html>
