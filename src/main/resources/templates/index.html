@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org"  layout:decorate="~{base2}">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+
+<div th:replace="fragments/header::header"></div>
+
+<main class="main">
+    <form th:action="@{/new}"  th:method="POST">
+<div class="index-page">
+<div class="time-table">
+    <div class="class-head">Monday</div>
+    <div class="class">1 </div>
+    <div class="class">2 </div>
+    <div class="class">3 </div>
+    <div class="class">4 </div>
+    <div class="class">5 Common</div>
+    <div class="class">6 Common</div>
+    <div class="class">7 Career P</div>
+    <div class="class">8</div>
+</div>
+        <div class="time-table">
+        <div class="class-head">Tuesday</div>
+        <div class="class"><a href="/themes">1 Common</a> <a href="/themes/theme2">Theme 2</a></div>
+        <div class="class">2 Common</div>
+        <div class="class">3 KK-ICDL</div>
+        <div class="class">4 KK-ICDL</div>
+        <div class="class">5 Food & Nut</div>
+        <div class="class">6 Personal Eff</div>
+        <div class="class">7 Personal Eff</div>
+        <div class="class">
+            <select>
+                <option value="">Common</option>
+                <option value="">KK</option>
+                <option value="">Personal Eff</option>
+                <option value="">Career Planning</option>
+                <option value="">Food & Nut</option>
+
+            </select>
+            <select>
+                <option value="">Theme1</option>
+                <option value="">Theme2</option>
+                <option value="">Theme3</option>
+                <option value="">Theme4</option>
+                <option value="">Theme5</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="time-table">
+        <div class="class-head">Wednesday</div>
+        <div class="class">1 Personal Eff</div>
+        <div class="class">2 Personal Eff</div>
+        <div class="class">3 Career P</div>
+        <div class="class">4 KK-ICDL</div>
+        <div class="class">5 KK-ICDL</div>
+        <div class="class">6</div>
+        <div class="class">7</div>
+        <div class="class">8</div>
+    </div>
+    <div class="time-table">
+        <div class="class-head">Thursday</div>
+        <div class="class">1 Food & Nut</div>
+        <div class="class">2 Food & Nut</div>
+        <div class="class">3 Common</div>
+        <div class="class">4 Common</div>
+        <div class="class">5 KK-ICDL</div>
+        <div class="class">6 Personal Eff</div>
+        <div class="class">7</div>
+        <div class="class">8</div>
+    </div>
+    <div class="time-table">
+        <div class="class-head">Friday</div>
+        <div class="class">1 KK-ICDL</div>
+        <div class="class">2 KK-ICDL</div>
+        <div class="class">3 Personal Eff</div>
+        <div class="class">4 Career P</div>
+        <div class="class">5</div>
+        <div class="class">6</div>
+        <div class="class">7</div>
+        <div class="class">8</div>
+    </div>
+</div>
+    </form>
+</main>
+<div th:replace="fragments/footer::footer"></div>
+</div>
+</body>
+</html>

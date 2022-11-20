@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/timetable")
+@RequestMapping("/")
 public class TimeTableController {
 
 
@@ -30,7 +30,13 @@ public class TimeTableController {
     private ItemRepository itemRepo;
 
 
-    @GetMapping("/new")
+    @GetMapping()
+    public String showTimeTable(Model model){
+        System.out.println("index");
+        return "index";
+    }
+
+    @GetMapping("/timetable/new")
     public String showNewTimeTable(Model model){
         List<Item> itemList=itemRepo.findAll();
         model.addAttribute("items",itemList);
@@ -38,10 +44,10 @@ public class TimeTableController {
         return "timetable/new";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/timetable/save")
     public String create(@ModelAttribute("timeTable") TimeTable timeTable){
         timeTableRepo.save(timeTable);
-        return "redirect:/new";
+        return "redirect:/index";
         // return null;
     }
 
