@@ -7,10 +7,7 @@ import local.vtos2.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,16 +37,16 @@ public class ItemController {
 
     @GetMapping("/new")
     public String newItem(Model model){
-    //    model.addAttribute("item", new Item());
+        model.addAttribute("item", new Item());
         return "items/new";
     }
 
-    //@PostMapping()
-    //public String create(@ModelAttribute("item") Item item){
-     //   itemDao.save(item);
-     //  return "redirect:/items";
-       // return null;
-    //}
+    @PostMapping()
+    public String create(@ModelAttribute("item") Item item){
+        repo.save(item);
+      return "redirect:/items";
+     // return null;
+    }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id){

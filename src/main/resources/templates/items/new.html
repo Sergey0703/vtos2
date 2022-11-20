@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <title>New Item</title>
 </head>
-<body>
+
 <body>
 
 <form th:method="POST" th:action="@{/items}" th:object="${item}">
-    <input type="text" th:field="*{name}" id="name">
+    <label> Name:
+    <input type="text" th:field="*{name}" id="name" required>
+    </label>
     </br>
-    <input type="submit" value="Create!">
+   <input type="submit" value="Create!!!">
+
 
 </form>
+
 </body>
 </html>
