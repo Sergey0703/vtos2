@@ -10,10 +10,7 @@ import local.vtos2.repositories.TimeTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,9 +29,22 @@ public class TimeTableController {
 
     @GetMapping()
     public String showTimeTable(Model model){
+        List<TimeTable> listTimeTable=timeTableRepo.findAll();
+        model.addAttribute("listTimeTable",listTimeTable);
         System.out.println("index");
         return "index";
     }
+
+    @GetMapping("/timetable/edit/{id}")
+    public String editTimeTable(@PathVariable("id") Integer id, Model model){
+        List<Item> itemList=itemRepo.findAll();
+        model.addAttribute("items",itemList);
+        TimeTable timeTable=timeTableRepo.findById(id).get();
+        model.addAttribute("timeTable",timeTable);
+        System.out.println("timetable/edit");
+        return "timetable/new";
+    }
+
 
     @GetMapping("/timetable/new")
     public String showNewTimeTable(Model model){
