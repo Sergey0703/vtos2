@@ -11,7 +11,9 @@
 <main class="main">
 
 <h1>Items</h1>
+
 <div th:each="item:${items}" class="item">
+   <!--  <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> <a href="/themes">Themes</a> -->
      <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> <a href="/themes">Themes</a>
 
 </div>
