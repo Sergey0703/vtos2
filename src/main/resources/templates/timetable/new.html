@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Lesson</title>
+</head>
+
+<body>
+
+<form th:method="POST" th:action="@{/timetable/save}" th:object="${timeTable}">
+    <label> Name:
+   <!-- <input type="text" th:field="*{name}" id="name" required> -->
+        <select th:field="*{item}" required>
+            <th:block th:each="it : ${items}">
+                <option th:text="${it.name}" th:value="${it.id}"/>
+            </th:block>
+
+        </select>
+    </label>
+    </br>
+   <input type="submit" value="Create!!!">
+
+
+</form>
+
+</body>
+</html>

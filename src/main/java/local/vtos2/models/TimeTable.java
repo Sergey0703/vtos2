@@ -4,19 +4,20 @@ package local.vtos2.models;
 
 //port lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class TimeTable {
     @Id
-    @Column(name="lesson_id")
-    private int lesson_id;
-    @Column(name="item_id")
-    private int item_id;
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+
+    @ManyToOne
+    @JoinColumn(name="item_id")
+
+    private Item item;
     //private String name;
     //private String description;
 
@@ -24,26 +25,30 @@ public class TimeTable {
 
     }
 
-    public TimeTable(int lesson_id, int item_id){
-        this.lesson_id=lesson_id;
-        this.item_id=item_id;
+    public TimeTable(int id){
+        this.id=id;
+      //  this.item_id=item_id;
     }
 
-    public void setLessonId(int lesson_id){
-        this.lesson_id=lesson_id;
+    public void setId(int id){
+        this.id=id;
     }
 
-    public int getLessonId(){
-        return this.lesson_id;
+    public int getId(){
+        return this.id;
     }
 
-    public void setItemId(int item_id){
-        this.item_id=item_id;
-    }
+  //  public void setItemId(int item_id){
+  //      this.item_id=item_id;
+  //  }
 
-    public int getItemId(){
-        return this.item_id;
-    }
+  //  public int getItemId(){
+  //      return this.item_id;
+  //  }
+
+    public void setItem(Item item) {this.item=item;}
+
+    public Item getItem(){return item;}
     /*public void setName(String name){
         this.name=name;
     }
