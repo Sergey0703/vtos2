@@ -8,7 +8,16 @@
 
 
 <form th:method="PATCH" th:action="@{/timetable/save/{id}(id=${timeTable.getId()})}" th:object="${timeTable}">
+    <input type="hidden" th:value="${timeTable.id}">
+    <label> Lesson:
+        <!-- <input type="text" th:field="*{name}" id="name" required> -->
+        <select th:field="*{item}" required>
+            <th:block th:each="it : ${items}">
+                <option th:text="${it.name}" th:value="${it.id}"/>
+            </th:block>
 
+        </select>
+    </label>
     </br>
     <input type="submit" value="Update!">
 

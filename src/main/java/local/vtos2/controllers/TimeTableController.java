@@ -8,6 +8,7 @@ import local.vtos2.models.TimeTable;
 import local.vtos2.repositories.ItemRepository;
 import local.vtos2.repositories.TimeTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +30,8 @@ public class TimeTableController {
 
     @GetMapping()
     public String showTimeTable(Model model){
-        List<TimeTable> listTimeTable=timeTableRepo.findAll();
+     //   List<TimeTable> listTimeTable=timeTableRepo.findAllByOrderByIdAsc();
+        List<TimeTable> listTimeTable=timeTableRepo.findAll(Sort.by(Sort.Direction.ASC, "id"));
         model.addAttribute("listTimeTable",listTimeTable);
         System.out.println("index");
         return "index";
@@ -57,6 +59,7 @@ public class TimeTableController {
     @PostMapping("/timetable/save")
     public String create(@ModelAttribute("timeTable") TimeTable timeTable){
         timeTableRepo.save(timeTable);
+        System.out.println("Save!!!");
         return "redirect:/";
         // return null;
     }
