@@ -57,7 +57,7 @@ public class TimeTableController {
     @PostMapping("/timetable/save")
     public String create(@ModelAttribute("timeTable") TimeTable timeTable){
         timeTableRepo.save(timeTable);
-        return "redirect:/index";
+        return "redirect:/";
         // return null;
     }
 
