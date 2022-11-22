@@ -31,6 +31,7 @@ public class ItemController {
 
     @GetMapping("/{id}")
      public String item(@PathVariable("id") int id, Model model){
+        System.out.println("id");
    //     model.addAttribute("item",itemDao.showItem(id));
       return "items/item";
     }
@@ -62,7 +63,8 @@ public class ItemController {
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id){
-     //   itemDao.delete(id);
+        System.out.println("delete");
+     //  itemDao.delete(id);
         return "redirect:/items";
     }
 }

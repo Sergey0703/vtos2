@@ -9,7 +9,7 @@
 
 <form th:method="POST" th:action="@{/timetable/save}" th:object="${timeTable}">
     <input type="hidden" name="id" th:value="${timeTable.id}">
-    <label> Name:
+    <label> Name::
    <!-- <input type="text" th:field="*{name}" id="name" required> -->
         <select th:field="*{item}" required>
             <th:block th:each="it : ${items}">
