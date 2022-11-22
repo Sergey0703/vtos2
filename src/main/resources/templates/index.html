@@ -16,22 +16,65 @@
     <div class="class-head">Monday</div>
     <div class="class">
            <div th:block th:each="timeT: ${listTimeTable}">
-               <a th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+               <a th:if="${timeT.id==1}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
            </div>
     </div>
-    <div class="class">2 </div>
-    <div class="class">3 </div>
-    <div class="class">4 </div>
-    <div class="class">5 Common</div>
-    <div class="class">6 Common</div>
-    <div class="class">7 Career P</div>
-    <div class="class">8</div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==2}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==3}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==4}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==5}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==6}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==7}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
+    <div class="class">
+        <div th:block th:each="timeT: ${listTimeTable}">
+            <a th:if="${timeT.id==8}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        </div>
+    </div>
 </div>
         <div class="time-table">
         <div class="class-head">Tuesday</div>
-        <div class="class"><a href="/themes">1 Common</a> <a href="/themes/theme2">Theme 2</a></div>
-        <div class="class">2 Common</div>
-        <div class="class">3 KK-ICDL</div>
+        <div class="class">
+
+                <div th:block th:each="timeT: ${listTimeTable}">
+                    <a th:if="${timeT.id==9}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+                </div>
+            <br>
+            <a href="/themes/theme2">Theme 2</a>
+        </div>
+        <div class="class">
+            <div th:block th:each="timeT: ${listTimeTable}">
+                <a th:if="${timeT.id==10}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+            </div>
+        </div>
+        <div class="class">
+            <div th:block th:each="timeT: ${listTimeTable}">
+                <a th:if="${timeT.id==11}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+            </div>
+        </div>
         <div class="class">4 KK-ICDL</div>
         <div class="class">5 Food & Nut</div>
         <div class="class">6 Personal Eff</div>
