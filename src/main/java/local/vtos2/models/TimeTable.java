@@ -18,6 +18,8 @@ public class TimeTable {
     @JoinColumn(name="item_id")
 
     private Item item;
+
+    //private int item_id;
     //private String name;
     //private String description;
 
@@ -29,6 +31,12 @@ public class TimeTable {
         this.id=id;
       //  this.item_id=item_id;
     }
+
+   /*  public TimeTable(int id, int item_id){
+        this.id=id;
+        this.item_id=item_id;
+    }
+    */
 
     public void setId(int id){
         this.id=id;
@@ -49,6 +57,14 @@ public class TimeTable {
     public void setItem(Item item) {this.item=item;}
 
     public Item getItem(){return item;}
+
+    public void saveTimeTable(int id, Item it){
+        //TimeTable.add();
+       // Item it=new Item(item_id);
+       // TimeTable tTable=new TimeTable(id+1);
+       // tTable.setItem(it);
+       // System.out.println("id="+tTable.getId()+" itemN="+it.getName()+" t="+tTable.item.getName());
+    }
     /*public void setName(String name){
         this.name=name;
     }

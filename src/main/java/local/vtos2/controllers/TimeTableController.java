@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -75,4 +76,22 @@ public class TimeTableController {
         // return null;
     }
 
+    @PostMapping("/timetable/savelist")
+    public String saveList(TimeTable timeTable, HttpServletRequest request){
+        String[] itemsArray= request.getParameterValues("item");
+        String[] idArray= request.getParameterValues("id");
+        for(int i=0; i<itemsArray.length;i++){
+             Item it=itemRepo.findById(Integer.valueOf(itemsArray[i])).get();
+             TimeTable timeT=timeTableRepo.findById(Integer.valueOf(idArray[i])).get();
+             //timeTable.saveTimeTable(i, it);
+             timeT.setItem(it);
+             //timeT.item=;
+            timeTableRepo.save(timeT);
+             System.out.println("id="+i+" itemA="+itemsArray[i]);
+        }
+        //timeTableRepo.save(timeTable);
+        System.out.println("Save!!!");
+        return "redirect:/index_admin";
+        // return null;
+    }
 }
