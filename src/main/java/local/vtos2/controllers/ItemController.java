@@ -32,7 +32,7 @@ public class ItemController {
     @GetMapping("/{id}")
      public String item(@PathVariable("id") int id, Model model){
         System.out.println("id");
-   //     model.addAttribute("item",itemDao.showItem(id));
+        model.addAttribute("item",repo.findById(id).get());
       return "items/item";
     }
 
@@ -51,15 +51,15 @@ public class ItemController {
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id){
-       // model.addAttribute("item", itemDao.showItem(id));
+        model.addAttribute("item", repo.findById(id).get());
         return "items/edit";
     }
 
-    //@PatchMapping("/{id}")
-   // public String update(@ModelAttribute("item") Item item, @PathVariable("id") int id){
-     // itemDao.update(id, item);
-   //   return "redirect:/items";
-   // }
+    @PostMapping("/{id}")
+    public String update(@ModelAttribute("item") Item item, @PathVariable("id") int id){
+     repo.save(item);
+      return "redirect:/items";
+    }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id){

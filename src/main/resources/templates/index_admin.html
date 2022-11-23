@@ -35,7 +35,7 @@
         </select>
         </th:block>
     </div>
-    <div class="class">
+    <div th:block class="class">
         <input type="hidden" name="id" value=3>
         <th:block th:each="timeT: ${listTimeTable}">
             <select th:if="${timeT.id==3}" name="item" >
@@ -43,76 +43,144 @@
                     <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
                 </th:block>
             </select>
+        </th:block>
     </div>
     <div class="class">
-        <div th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==4}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </div>
+        <input type="hidden" name="id" value=4>
+        <th:block th:each="timeT: ${listTimeTable}">
+            <select th:if="${timeT.id==4}" name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                </th:block>
+            </select>
+        </th:block>
     </div>
     <div class="class">
-        <div th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==5}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </div>
+        <input type="hidden" name="id" value=5>
+        <th:block th:each="timeT: ${listTimeTable}">
+            <select th:if="${timeT.id==5}" name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                </th:block>
+            </select>
+        </th:block>
     </div>
     <div class="class">
-        <div th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==6}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </div>
+        <input type="hidden" name="id" value=6>
+        <th:block th:each="timeT: ${listTimeTable}">
+            <select th:if="${timeT.id==6}" name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                </th:block>
+            </select>
+        </th:block>
     </div>
     <div class="class">
-        <div th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==7}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </div>
+        <input type="hidden" name="id" value=7>
+        <th:block th:each="timeT: ${listTimeTable}">
+            <select th:if="${timeT.id==7}" name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                </th:block>
+            </select>
+        </th:block>
     </div>
     <div class="class">
-        <div th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==8}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </div>
+        <input type="hidden" name="id" value=8>
+        <th:block th:each="timeT: ${listTimeTable}">
+            <select th:if="${timeT.id==8}" name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                </th:block>
+            </select>
+        </th:block>
     </div>
 </div>
         <div class="time-table">
         <div class="class-head">Tuesday</div>
-        <div class="class">
+            <div class="class">
+                <input type="hidden" name="id" value=11>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select name="item" th:if="${timeT.id==11}" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}" />
+                        </th:block>
 
-                <div th:block th:each="timeT: ${listTimeTable}">
-                    <a th:if="${timeT.id==9}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-                </div>
-            <br>
-            <a href="/themes/theme2">Theme 2</a>
-        </div>
-        <div class="class">
-            <div th:block th:each="timeT: ${listTimeTable}">
-                <a th:if="${timeT.id==10}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+                    </select>
+                </th:block>
             </div>
-        </div>
-        <div class="class">
-            <div th:block th:each="timeT: ${listTimeTable}">
-                <a th:if="${timeT.id==11}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+            <div class="class">
+                <input type="hidden" name="id" value=12>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==12}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
             </div>
-        </div>
-        <div class="class">4 KK-ICDL</div>
-        <div class="class">5 Food & Nut</div>
-        <div class="class">6 Personal Eff</div>
-        <div class="class">7 Personal Eff</div>
-        <div class="class">
-            <select>
-                <option value="">Common</option>
-                <option value="">KK</option>
-                <option value="">Personal Eff</option>
-                <option value="">Career Planning</option>
-                <option value="">Food & Nut</option>
+            <div th:block class="class">
+                <input type="hidden" name="id" value=13>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==13}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
+            </div>
+            <div class="class">
+                <input type="hidden" name="id" value=14>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==14}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
+            </div>
+            <div class="class">
+                <input type="hidden" name="id" value=15>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==15}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
+            </div>
+            <div class="class">
+                <input type="hidden" name="id" value=16>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==16}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
+            </div>
+            <div class="class">
+                <input type="hidden" name="id" value=17>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==17}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
+            </div>
+            <div class="class">
+                <input type="hidden" name="id" value=18>
+                <th:block th:each="timeT: ${listTimeTable}">
+                    <select th:if="${timeT.id==18}" name="item" >
+                        <th:block th:each="it : ${items}">
+                            <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}"/>
+                        </th:block>
+                    </select>
+                </th:block>
+            </div>
 
-            </select>
-            <select>
-                <option value="">Theme1</option>
-                <option value="">Theme2</option>
-                <option value="">Theme3</option>
-                <option value="">Theme4</option>
-                <option value="">Theme5</option>
-
-            </select>
-        </div>
-    </div>
+       </div>
     <div class="time-table">
         <div class="class-head">Wednesday</div>
         <div class="class">1 Personal Eff</div>
