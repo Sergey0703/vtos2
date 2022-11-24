@@ -81,13 +81,21 @@ public class TimeTableController {
         String[] itemsArray= request.getParameterValues("item");
         String[] idArray= request.getParameterValues("id");
         for(int i=0; i<itemsArray.length;i++){
+            System.out.println("id0=" + idArray[i] + " itemA0=" + itemsArray[i]);
+            if(!itemsArray[i].equals("")) {
              Item it=itemRepo.findById(Integer.valueOf(itemsArray[i])).get();
-             TimeTable timeT=timeTableRepo.findById(Integer.valueOf(idArray[i])).get();
-             //timeTable.saveTimeTable(i, it);
-             timeT.setItem(it);
-             //timeT.item=;
-            timeTableRepo.save(timeT);
-             System.out.println("id="+i+" itemA="+itemsArray[i]);
+                try {
+                    TimeTable timeT = timeTableRepo.findById(Integer.valueOf(idArray[i])).get();
+                    //timeTable.saveTimeTable(i, it);
+                    timeT.setItem(it);
+                    //timeT.item=;
+                    timeTableRepo.save(timeT);
+                }catch (Exception e) {
+                      System.out.println("Exception!!!");
+                }
+
+                 System.out.println("id=" + i + " itemA=" + itemsArray[i]);
+             }
         }
         //timeTableRepo.save(timeTable);
         System.out.println("Save!!!");
