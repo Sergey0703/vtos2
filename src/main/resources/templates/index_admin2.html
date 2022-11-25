@@ -16,7 +16,7 @@
 
     <div class="time-table">
 
-    <div class="class-head">[[${#dates.dayOfWeekName(timeT.day)}]]</div>
+        <div class="class-head"><div>[[${#dates.dayOfWeekName(timeT.day)}]]</div><div> [[${#dates.format(timeT.day, 'dd-MM-yyyy')}]]</div></div>
 
         <div class="class">
             <input type="hidden" name="id" th:value="${timeT.id}">
