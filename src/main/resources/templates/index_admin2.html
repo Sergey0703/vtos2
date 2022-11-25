@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org"  layout:decorate="~{base2}">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+
+<div th:replace="fragments/header::header"></div>
+
+<main class="main">
+    <form th:method="PATCH" th:action="@{/timetable/savelist/}" th:object="${listTimeTable}">
+<div class="index-page">
+    <th:block th:each="timeT: ${listTimeTable}">
+    <div class="time-table">
+
+    <div class="class-head">Monday</div>
+        <th:block th:each="timeT: ${listTimeTable}">
+        <div class="class">
+            <input type="hidden" name="id" value=1>
+
+                <select name="item" >
+                    <th:block th:each="it : ${items}">
+                        <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}" />
+                    </th:block>
+
+                </select>
+
+
+        </div>
+        </th:block>
+    </div>
+    </th:block>
+
+    </div>
+        <input type="submit" value="Save!!!">
+    </form>
+</main>
+<div th:replace="fragments/footer::footer"></div>
+</div>
+</body>
+</html>

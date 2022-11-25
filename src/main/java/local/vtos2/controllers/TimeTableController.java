@@ -49,6 +49,17 @@ public class TimeTableController {
         return "index_admin";
     }
 
+    @GetMapping("/index_admin2")
+    public String showTimeTableAdmin2(Model model){
+        //   List<TimeTable> listTimeTable=timeTableRepo.findAllByOrderByIdAsc();
+        List<Item> itemList=itemRepo.findAll();
+        model.addAttribute("items",itemList);
+        List<TimeTable> listTimeTable=timeTableRepo.findAll(Sort.by(Sort.Direction.ASC, "id"));
+        model.addAttribute("listTimeTable",listTimeTable);
+        System.out.println("indexAdmin2");
+        return "index_admin2";
+    }
+
     @GetMapping("/timetable/edit/{id}")
     public String editTimeTable(@PathVariable("id") Integer id, Model model){
         List<Item> itemList=itemRepo.findAll();
