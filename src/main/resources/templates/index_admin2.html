@@ -13,23 +13,96 @@
     <form th:method="PATCH" th:action="@{/timetable/savelist/}" th:object="${listTimeTable}">
 <div class="index-page">
     <th:block th:each="timeT: ${listTimeTable}">
+
     <div class="time-table">
 
     <div class="class-head">Monday</div>
-        <th:block th:each="timeT: ${listTimeTable}">
-        <div class="class">
-            <input type="hidden" name="id" value=1>
 
+        <div class="class">
+            <input type="hidden" name="id" th:value="${timeT.id}">
                 <select name="item" >
+                        <option value="0"> </option>
                     <th:block th:each="it : ${items}">
-                        <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item.id==it.id}" />
+
+                        <option th:if="${timeT.item1==null}" th:text="${it.name}" th:value="${it.id}" />
+                        <option th:if="${timeT.item1!=null}" th:text="${it.name}" th:value="${it.id}"  th:selected="${timeT.item1.id==it.id}" />
+
                     </th:block>
 
                 </select>
-
-
         </div>
-        </th:block>
+
+        <div class="class">
+             <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item2.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item3.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item4.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item4.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item5.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item6.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item7.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+        <div class="class">
+            <select name="item" >
+                <th:block th:each="it : ${items}">
+                    <option th:text="${it.name}" th:value="${it.id}" th:selected="${timeT.item8.id==it.id}" />
+                </th:block>
+
+            </select>
+        </div>
+
     </div>
     </th:block>
 

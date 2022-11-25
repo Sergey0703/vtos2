@@ -89,28 +89,45 @@ public class TimeTableController {
 
     @PostMapping("/timetable/savelist")
     public String saveList(TimeTable timeTable, HttpServletRequest request){
-        String[] itemsArray= request.getParameterValues("item");
+
         String[] idArray= request.getParameterValues("id");
-        for(int i=0; i<itemsArray.length;i++){
-            System.out.println("id0=" + idArray[i] + " itemA0=" + itemsArray[i]);
-            if(!itemsArray[i].equals("")) {
-             Item it=itemRepo.findById(Integer.valueOf(itemsArray[i])).get();
-                try {
-                    TimeTable timeT = timeTableRepo.findById(Integer.valueOf(idArray[i])).get();
-                    //timeTable.saveTimeTable(i, it);
-                    timeT.setItem(it);
+        String[] itemsArray= request.getParameterValues("item");
+        System.out.println("idArrayLength="+idArray.length);
+        System.out.println("itemsArrayLength="+itemsArray.length);
+        int iter=itemsArray.length/idArray.length;
+        for(int i=0; i<idArray.length;i++){
+
+
+           int id=Integer.valueOf(idArray[i]);
+           TimeTable timeT = timeTableRepo.findById(id).get();
+
+            System.out.println("i="+i+ " id=" + id +" iter="+iter);
+            for(int j=iter*i; j<iter*i+iter;j++) {
+                int it_id=Integer.valueOf(itemsArray[j]);
+                Item it=null;
+                if(it_id>0) {
+                    it = itemRepo.findById(it_id).get();
+                }
+                System.out.println("j="+j+ " it=" + it);
+                if (j == iter*i) {
+                    timeT.setItem1(it);
+                }
+                if (j == iter*i+1) {
+                    timeT.setItem2(it);
+                }
+            }
                     //timeT.item=;
                     timeTableRepo.save(timeT);
-                }catch (Exception e) {
-                      System.out.println("Exception!!!");
-                }
+             //   }catch (Exception e) {
+             //         System.out.println("Exception!!!");
+             //   }
 
-                 System.out.println("id=" + i + " itemA=" + itemsArray[i]);
-             }
+                 System.out.println("i="+i+ " id=" + id + " itemA=" + itemsArray[i]);
+             //}
         }
         //timeTableRepo.save(timeTable);
         System.out.println("Save!!!");
-        return "redirect:/index_admin";
+        return "redirect:/index_admin2";
         // return null;
     }
 }

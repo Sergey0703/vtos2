@@ -18,7 +18,7 @@ public class TimeTable {
 
     @ManyToOne
     @JoinColumn(name="item_id1")
-    private Item item;
+    private Item item1;
 
     @ManyToOne
     @JoinColumn(name="item_id2")
@@ -141,9 +141,9 @@ public class TimeTable {
   //      return this.item_id;
   //  }
 
-    public void setItem(Item item) {this.item=item;}
+    public void setItem1(Item item1) {this.item1=item1;}
 
-    public Item getItem(){return item;}
+    public Item getItem1(){return item1;}
 
     public void saveTimeTable(int id, Item it){
         //TimeTable.add();
