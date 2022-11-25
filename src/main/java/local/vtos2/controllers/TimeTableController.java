@@ -115,6 +115,24 @@ public class TimeTableController {
                 if (j == iter*i+1) {
                     timeT.setItem2(it);
                 }
+                if (j == iter*i+2) {
+                    timeT.setItem3(it);
+                }
+                if (j == iter*i+3) {
+                    timeT.setItem4(it);
+                }
+                if (j == iter*i+4) {
+                    timeT.setItem5(it);
+                }
+                if (j == iter*i+5) {
+                    timeT.setItem6(it);
+                }
+                if (j == iter*i+6) {
+                    timeT.setItem7(it);
+                }
+                if (j == iter*i+7) {
+                    timeT.setItem8(it);
+                }
             }
                     //timeT.item=;
                     timeTableRepo.save(timeT);
