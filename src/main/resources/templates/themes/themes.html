@@ -12,16 +12,20 @@
 
 <h1>Themes</h1>
 
-<div th:each="theme:${themelist}" class="theme">
-   <!--  <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> <a href="/themes">Themes</a> -->
-     <a th:href="@{/themes/{id}(id=${theme.getId()})}" th:text="${theme.getName()}">user</a>
+<div th:each="theme:${themelist}" class="themes-list">
 
+    <div class="theme-list_name">
+     <a th:href="@{/themes/edit/{id}(id=${theme.getId()})}" th:text="${theme.getName()}">theme</a>
+    </div>
+    <div class="theme-list">
+    [[${theme.getText()}]]
+    </div>
 </div>
 
 <br>
 <hr>
 
-<a href="/themes/new">Create new</a>
+<a th:href="@{/themes/new/{item_id}(item_id=${item_id})}">Create new</a>
 
 
 </main>

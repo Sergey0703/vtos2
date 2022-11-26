@@ -144,7 +144,22 @@ header .menu{
    justify-content: center;
    }
 
+    .themes-list {
+        display: flex;
+         justify-content: start;
+         max-width: 775px;
+     }
 
+     .theme-list_name {
+       width: 100px;
+         height: 100px;
+         background: linear-gradient(-45deg, #788cff, #b4c8ff);
+     }
+
+      .theme-list {
+
+
+          }
   .footer{
 
   }

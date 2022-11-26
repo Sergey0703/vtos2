@@ -2,20 +2,42 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>New Item</title>
+    <title>New Theme</title>
+
+    <link rel="stylesheet" href="../../bootstrap.min.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body>
+<div style ="border: 1px solid blue" class="wrapper">
+    <div th:replace="fragments/header::header"></div>
+    <main class="main">
 
-<form th:method="POST" th:action="@{/themes}" th:object="${theme}">
-    <label> Name:
-    <input type="text" th:field="*{name}" id="name" required>
-    </label>
+    <form th:method="PATCH" th:action="@{/themes/save}" th:object="${theme}">
+
+           [[${theme.id}]]
+        <th:block th:unless="${theme.id==0}">
+            <input type="hidden" name="id" th:value="${theme.id}">
+        </th:block>
+        <th:block th:if="${theme.id==null}">
+         1<input type="hidden" name="item" th:value="${item.id}">
+        </th:block>
+        <th:block th:unless="${theme.id==0}">
+          2  <input type="hidden" name="item" th:value="${item_id}">
+        </th:block>
+    <label for="name"> Name: </label>
+    <input type="text" class="form-control" th:field="*{name}" id="name"  required placeholder="Input Subject">
+
     </br>
-   <input type="submit" value="Create!!!">
+    <textarea class="form-control" placeholder="Input Text " th:field="*{text}" rows="20" >
+    </textarea>
+      </br>
+        <input type="submit" class="btn btn-primary" value="Submit!!!">
 
 
 </form>
-
+    </main>
+    <div th:replace="fragments/footer::footer"></div>
+</div>
 </body>
 </html>

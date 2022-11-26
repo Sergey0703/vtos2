@@ -58,6 +58,7 @@ public class ItemController {
     @PostMapping("/{id}")
     public String update(@ModelAttribute("item") Item item, @PathVariable("id") int id){
      repo.save(item);
+     System.out.println("update!!!");
       return "redirect:/items";
     }
 
