@@ -5,14 +5,14 @@
     <title>Item</title>
 </head>
 <body>
-<body>
+
 <h1>Item</h1>
 <p th:text="${item.id}">VALUE</p>
 <p th:text="${item.getName()}">VALUE</p>
 
 <a th:href="@{{id}/edit(id=${item.id})}">Edit</a>
 
-<form th:method="DELETE" th:action="@{/items/{id}(id=${item.getId()})}">
+<form th:method="DELETE" th:action="@{/items/delete/{id}(id=${item.getId()})}" th:object="${item}">
 <input type="submit" value="Delete">
 </form>
 </body>

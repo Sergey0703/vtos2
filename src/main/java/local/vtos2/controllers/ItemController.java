@@ -61,10 +61,12 @@ public class ItemController {
       return "redirect:/items";
     }
 
-    @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") int id){
+    @PostMapping("/delete/{id}")
+   // public String delete(@PathVariable("id") int id){
+    public String delete(@ModelAttribute("item") Item item){
         System.out.println("delete");
-     //  itemDao.delete(id);
+        repo.delete(item);
         return "redirect:/items";
     }
+
 }
