@@ -32,6 +32,8 @@ public class TimeTableController {
     @GetMapping()
     public String showTimeTable(Model model){
      //   List<TimeTable> listTimeTable=timeTableRepo.findAllByOrderByIdAsc();
+        List<Item> itemList=itemRepo.findAll();
+        model.addAttribute("items",itemList);
         List<TimeTable> listTimeTable=timeTableRepo.findAll(Sort.by(Sort.Direction.ASC, "id"));
         model.addAttribute("listTimeTable",listTimeTable);
         System.out.println("index");

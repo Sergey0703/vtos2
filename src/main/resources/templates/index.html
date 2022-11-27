@@ -10,129 +10,95 @@
 <div th:replace="fragments/header::header"></div>
 
 <main class="main">
-    <form th:action="@{/new}"  th:method="POST">
-<div class="index-page">
-<div class="time-table">
-    <div class="class-head">Monday</div>
-    <div class="class">
-           <th:block th:each="timeT: ${listTimeTable}">
-               <a th:if="${timeT.id==1}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-           </th:block>
-    </div>
-    <div class="class">
-        <th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==2}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-    <div class="class">
-        <th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==3}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-    <div class="class">
-        <th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==4}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-    <div class="class">
-        <th:block th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==5}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-    <div class="class">
-        <th:block th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==6}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-    <div class="class">
-        <th:block th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==7}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-    <div class="class">
-        <th:block th:block th:each="timeT: ${listTimeTable}">
-            <a th:if="${timeT.id==8}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-        </th:block>
-    </div>
-</div>
-        <div class="time-table">
-        <div class="class-head">Tuesday</div>
-        <div class="class">
 
-                <th:block th:block th:each="timeT: ${listTimeTable}">
-                    <a th:if="${timeT.id==9}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-                </th:block>
-            <br>
-            <a href="/themes/theme2">Theme 2</a>
-        </div>
-        <div class="class">
-            <th:block th:block th:each="timeT: ${listTimeTable}">
-                <a th:if="${timeT.id==10}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
+        <div class="index-page">
+            <th:block th:each="timeT: ${listTimeTable}">
+
+                <div class="time-table">
+
+                    <div class="class-head"><div>[[${#dates.dayOfWeekName(timeT.day)}]]</div><div> [[${#dates.format(timeT.day, 'dd-MM-yyyy')}]]</div></div>
+
+                    <div class="class">
+
+                        <th:block th:if="${timeT.item1!=null}" >
+                           [[${timeT.item1.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item1==null}" >
+                            -
+                        </th:block>
+
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item2!=null}" >
+                            [[${timeT.item2.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item2==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item3!=null}" >
+                            [[${timeT.item3.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item3==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item4!=null}" >
+                            [[${timeT.item4.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item4==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item5!=null}" >
+                            [[${timeT.item5.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item5==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item6!=null}" >
+                            [[${timeT.item6.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item6==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item7!=null}" >
+                            [[${timeT.item7.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item7==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+                    <div class="class">
+                        <th:block th:if="${timeT.item8!=null}" >
+                            [[${timeT.item8.getName()}]]
+                        </th:block>
+                        <th:block th:if="${timeT.item8==null}" >
+                            -
+                        </th:block>
+                    </div>
+
+
+                </div>
             </th:block>
-        </div>
-        <div class="class">
-            <th:block th:block th:each="timeT: ${listTimeTable}">
-                <a th:if="${timeT.id==11}"  th:href="@{'/timetable/edit/'+${timeT.id}}"> [[${timeT.id}]]  - [[${timeT.item.name}]] ([[${timeT.item.id}]]) </a>
-            </th:block>
-        </div>
-        <div class="class">4 KK-ICDL</div>
-        <div class="class">5 Food & Nut</div>
-        <div class="class">6 Personal Eff</div>
-        <div class="class">7 Personal Eff</div>
-        <div class="class">
-            <select>
-                <option value="">Common</option>
-                <option value="">KK</option>
-                <option value="">Personal Eff</option>
-                <option value="">Career Planning</option>
-                <option value="">Food & Nut</option>
 
-            </select>
-            <select>
-                <option value="">Theme1</option>
-                <option value="">Theme2</option>
-                <option value="">Theme3</option>
-                <option value="">Theme4</option>
-                <option value="">Theme5</option>
-
-            </select>
         </div>
-    </div>
-    <div class="time-table">
-        <div class="class-head">Wednesday</div>
-        <div class="class">1 Personal Eff</div>
-        <div class="class">2 Personal Eff</div>
-        <div class="class">3 Career P</div>
-        <div class="class">4 KK-ICDL</div>
-        <div class="class">5 KK-ICDL</div>
-        <div class="class">6</div>
-        <div class="class">7</div>
-        <div class="class">8</div>
-    </div>
-    <div class="time-table">
-        <div class="class-head">Thursday</div>
-        <div class="class">1 Food & Nut</div>
-        <div class="class">2 Food & Nut</div>
-        <div class="class">3 Common</div>
-        <div class="class">4 Common</div>
-        <div class="class">5 KK-ICDL</div>
-        <div class="class">6 Personal Eff</div>
-        <div class="class">7</div>
-        <div class="class">8</div>
-    </div>
-    <div class="time-table">
-        <div class="class-head">Friday</div>
-        <div class="class">1 KK-ICDL</div>
-        <div class="class">2 KK-ICDL</div>
-        <div class="class">3 Personal Eff</div>
-        <div class="class">4 Career P</div>
-        <div class="class">5</div>
-        <div class="class">6</div>
-        <div class="class">7</div>
-        <div class="class">8</div>
-    </div>
-</div>
-    </form>
+
+
 </main>
 <div th:replace="fragments/footer::footer"></div>
 </div>

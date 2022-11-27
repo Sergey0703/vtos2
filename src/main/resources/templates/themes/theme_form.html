@@ -40,8 +40,8 @@
           <th:block th:unless="${theme.id==0}">
 
 
-      <form th:method="DELETE" th:action="@{/themes/delete/{id}(id=${theme.getId()})}" th:object="${them}">
-          33  <input type="hidden" name="item" th:value="${theme.item.id}">
+      <form th:method="DELETE" th:action="@{/themes/delete/{id}(id=${theme.getId()})}" th:object="${theme}">
+         <!--  <input type="hidden" name="item" th:value="${theme.item.id}"> -->
             <input type="submit" value="Delete">
         </form>
           </th:block>
