@@ -67,11 +67,20 @@ public class ThemeController {
         // return null;
     }
 
+    @PostMapping("/delete/{id}")
+    // public String delete(@PathVariable("id") int id){
+    public String delete(@ModelAttribute("theme") Theme theme,  @PathVariable("id") int id){
+        int id_theme=theme.getItem().getId();
+        System.out.println("delete");
+        repo.delete(theme);
+        return "redirect:/themes/"+id_theme;
+    }
     @PostMapping("/update/{id}")
     public String update(@ModelAttribute("theme") Theme theme, @PathVariable("id") int id){
         repo.save(theme);
         System.out.println("update!!!");
         return "redirect:/themes/"+theme.getItem().getId();
     }
+
 
 }

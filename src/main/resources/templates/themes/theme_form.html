@@ -32,10 +32,21 @@
     <textarea class="form-control" placeholder="Input Text " th:field="*{text}" rows="20" >
     </textarea>
       </br>
+
         <input type="submit" class="btn btn-primary" value="Submit!!!">
+        </form>
+
+      <div>
+          <th:block th:unless="${theme.id==0}">
 
 
-</form>
+      <form th:method="DELETE" th:action="@{/themes/delete/{id}(id=${theme.getId()})}" th:object="${them}">
+          33  <input type="hidden" name="item" th:value="${theme.item.id}">
+            <input type="submit" value="Delete">
+        </form>
+          </th:block>
+      </div>
+
     </main>
     <div th:replace="fragments/footer::footer"></div>
 </div>
