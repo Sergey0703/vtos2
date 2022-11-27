@@ -21,7 +21,7 @@
                     <div class="class">
 
                         <th:block th:if="${timeT.item1!=null}" >
-                           [[${timeT.item1.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item1.getId()})}">[[${timeT.item1.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item1==null}" >
                             -
@@ -31,7 +31,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item2!=null}" >
-                            [[${timeT.item2.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item2.getId()})}">[[${timeT.item2.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item2==null}" >
                             -
@@ -40,7 +40,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item3!=null}" >
-                            [[${timeT.item3.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item3.getId()})}">[[${timeT.item3.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item3==null}" >
                             -
@@ -49,7 +49,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item4!=null}" >
-                            [[${timeT.item4.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item4.getId()})}">[[${timeT.item4.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item4==null}" >
                             -
@@ -58,7 +58,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item5!=null}" >
-                            [[${timeT.item5.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item5.getId()})}">[[${timeT.item5.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item5==null}" >
                             -
@@ -67,7 +67,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item6!=null}" >
-                            [[${timeT.item6.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item6.getId()})}">[[${timeT.item6.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item6==null}" >
                             -
@@ -76,7 +76,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item7!=null}" >
-                            [[${timeT.item7.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item7.getId()})}">[[${timeT.item7.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item7==null}" >
                             -
@@ -85,7 +85,7 @@
 
                     <div class="class">
                         <th:block th:if="${timeT.item8!=null}" >
-                            [[${timeT.item8.getName()}]]
+                            <a th:href="@{themes/{id}(id=${timeT.item8.getId()})}">[[${timeT.item8.getName()}]]</a>
                         </th:block>
                         <th:block th:if="${timeT.item8==null}" >
                             -
