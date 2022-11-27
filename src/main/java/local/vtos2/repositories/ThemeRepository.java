@@ -12,4 +12,7 @@ public interface ThemeRepository extends JpaRepository<Theme, Integer> {
 
      @Query("SELECT th FROM Theme th WHERE th.item.id = ?1 ")
      List<Theme> findThemesByItem(Integer item_id);
+
+   // @Query("DELETE FROM Theme WHERE Theme.id = ?1 ")
+   // void deleteThemesById(Integer id);
 }

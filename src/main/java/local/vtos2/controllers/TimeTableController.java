@@ -40,6 +40,12 @@ public class TimeTableController {
         return "index";
     }
 
+    @GetMapping("/score")
+    public String showScore(Model model){
+
+        System.out.println("score");
+        return "score";
+    }
     @GetMapping("/index_admin")
     public String showTimeTableAdmin(Model model){
         //   List<TimeTable> listTimeTable=timeTableRepo.findAllByOrderByIdAsc();

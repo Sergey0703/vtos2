@@ -71,9 +71,12 @@ public class ThemeController {
     @PostMapping("/delete/{id}")
     // public String delete(@PathVariable("id") int id){
     public String delete(@ModelAttribute("theme") Theme theme,  @PathVariable("id") int id){
-        //int id_theme=theme.getItem().getId();
-        System.out.println("delete="+theme);
-        repo.delete(theme);
+        //int id_theme=theme.getId();
+        //int id_theme=theme.item;
+        System.out.println("delete="+id);
+        repo.deleteById(id);
+        //repo.delete(theme);
+        //repo.deleteThemesById(3);
         return "redirect:/themes/3";
     }
     @PostMapping("/update/{id}")

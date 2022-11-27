@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Theme {
+
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
