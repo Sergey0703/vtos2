@@ -13,17 +13,17 @@
     <div th:replace="fragments/header::header"></div>
     <main class="main">
 
-    <form th:method="PATCH" th:action="@{/themes/save}" th:object="${theme}">
+    <form th:method="POST" th:action="@{/themes/save/{id}(id=${theme.getId()})}" th:object="${theme}">
 
            [[${theme.id}]]
-        <th:block th:unless="${theme.id==0}">
-            <input type="hidden" name="id" th:value="${theme.id}">
+
+         <input type="hidden" name="tid" th:value="${tid}">
+
+        <th:block th:if="${theme.id==0}">
+            2  <input type="hidden" name="item" th:value="${item_id}">
         </th:block>
-        <th:block th:if="${theme.id==null}">
-         1<input type="hidden" name="item" th:value="${item.id}">
-        </th:block>
         <th:block th:unless="${theme.id==0}">
-          2  <input type="hidden" name="item" th:value="${item_id}">
+            3  <input type="hidden" name="item" th:value="${theme.item.id}">
         </th:block>
     <label for="name"> Name: </label>
     <input type="text" class="form-control" th:field="*{name}" id="name"  required placeholder="Input Subject">

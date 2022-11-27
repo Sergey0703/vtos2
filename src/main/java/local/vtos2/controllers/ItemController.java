@@ -45,6 +45,7 @@ public class ItemController {
     @PostMapping()
     public String create(@ModelAttribute("item") Item item){
         repo.save(item);
+        System.out.println("Save!!!It");
       return "redirect:/items";
      // return null;
     }

@@ -41,13 +41,26 @@ public class ThemeController {
     @GetMapping("/edit/{id}")
     public String editTheme(Model model,@PathVariable("id") int id){
       //  model.addAttribute("item",itemRepo.findById(id).get());
-      //  model.addAttribute("item_id",id);
+        model.addAttribute("tid",id);
         model.addAttribute("theme", repo.findById(id).get());
         return "themes/theme_form";
     }
-    @PostMapping("/save")
-    public String create(@ModelAttribute("theme") Theme theme){
-        repo.save(theme);
+    @PostMapping("/save/{id}")
+    public String create(@ModelAttribute("theme") Theme theme,@PathVariable("id") int id){
+       // int idInt=theme.getId();
+        System.out.println("id="+id);
+        if(id!=0){
+
+        Theme th=repo.findById(id).get();
+        th.setName(theme.getName());
+        th.setText(theme.getText());
+            repo.save(th);
+            System.out.println("upd");
+        }else{
+            repo.save(theme);
+            System.out.println("save");
+        }
+
         int item_id=theme.getItem().getId();
         System.out.println("Save!!!");
         return "redirect:/themes/"+item_id;
