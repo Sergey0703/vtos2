@@ -151,9 +151,10 @@ header .menu{
      }
 
      .theme-list_name {
-       width: 100px;
+       width: 200px;
          height: 100px;
-         background: linear-gradient(-45deg, #788cff, #b4c8ff);
+         link: "red";
+         background: linear-gradient(-75deg, #788cff, #b4c8ff);
      }
 
       .theme-list {

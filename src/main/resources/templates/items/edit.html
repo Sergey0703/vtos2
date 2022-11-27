@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Item</title>
+    <link rel="stylesheet" href="../../bootstrap.min.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<body>
+<div style ="border: 1px solid blue" class="wrapper">
+    <div th:replace="fragments/header::header"></div>
+    <main class="main">
 
 <form th:method="PATCH" th:action="@{/items/{id}(id=${item.getId()})}" th:object="${item}">
-    <input type="text" th:field="*{name}" id="name">
+    <input type="text" class="form-control" th:field="*{name}" id="name">
     </br>
-    <input type="submit" value="Update!">
+    <input type="submit" class="btn btn-primary" value="Update!">
 
 </form>
+    </main>
+    <div th:replace="fragments/footer::footer"></div>
+</div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -14,14 +15,14 @@
 
 <div th:each="item:${items}" class="item">
    <!--  <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> <a href="/themes">Themes</a> -->
-     <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> <a th:href="@{/themes/{itemid}(itemid=${item.getId()})}">Themes</a>
+     <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">user</a> - <a th:href="@{/themes/{itemid}(itemid=${item.getId()})}">Themes</a>
 
 </div>
 
 <br>
 <hr>
 
-<a href="/items/new">Create new</a>
+<a href="/items/new" class="btn btn-primary">Create new</a>
 
 
 </main>
