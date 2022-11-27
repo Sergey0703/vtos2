@@ -23,7 +23,8 @@ public class ThemeController {
     @GetMapping("/{id}")
     public String allThemes(Model model,@PathVariable("id") int id){
 
-        List<Theme> themeList=repo.findAll();
+       // List<Theme> themeList=repo.findAll();
+        List<Theme> themeList=repo.findThemesByItem(id);
         model.addAttribute("themelist",themeList);
       //  model.addAttribute("item",itemRepo.findById(id).get());
         model.addAttribute("item_id",id);
