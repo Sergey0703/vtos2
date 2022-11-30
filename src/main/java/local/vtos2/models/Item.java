@@ -1,9 +1,5 @@
 package local.vtos2.models;
 
-//import lombok.Data;
-
-//import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
