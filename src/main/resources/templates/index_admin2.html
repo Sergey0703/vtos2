@@ -11,7 +11,7 @@
 <div th:replace="fragments/header::header"></div>
 
 <main class="main">
-    <form th:method="PATCH" th:action="@{/timetable/savelist/}" th:object="${listTimeTable}">
+    <form th:method="POST" th:action="@{/timetable/savelist/}" th:object="${listTimeTable}">
 <div class="index-page">
     <th:block th:each="timeT: ${listTimeTable}">
 
