@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Theme</title>
+
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<div style ="border: 1px solid blue" class="wrapper">
+    <div th:replace="fragments/header::header"></div>
+    <main class="main">
+
+    <form th:method="POST" th:action="@{/process_login}" >
+
+
+    <label for="username"> Name: </label>
+    <input type="text" class="form-control" name="username" id="username">
+     </br>
+
+     <label for="password"> Password: </label>
+     <input type="password" class="form-control" name="password" id="password">
+     </br>
+     <input type="submit" class="btn btn-primary" value="Login">
+
+     <div th:if="${param.error}" style="color:red">
+         Bad credentials
+     </div>
+    </form>
+
+
+    </main>
+    <div th:replace="fragments/footer::footer"></div>
+</div>
+</body>
+</html>
