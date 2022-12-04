@@ -9,43 +9,42 @@
 </head>
 
 <body>
-<div style ="border: 1px solid blue" class="wrapper">
+<div style="border: 1px solid blue" class="wrapper">
     <div th:replace="fragments/header::header"></div>
     <main class="main">
 
-    <form th:method="POST" th:action="@{/themes/save/{id}(id=${theme.getId()})}" th:object="${theme}">
+        <form th:method="POST" th:action="@{/themes/save/{id}(id=${theme.getId()})}" th:object="${theme}">
 
-           [[${theme.id}]]
 
-         <input type="hidden" name="tid" th:value="${tid}">
+            <input type="hidden" name="tid" th:value="${tid}">
 
-        <th:block th:if="${theme.id==0}">
-            2  <input type="hidden" name="item" th:value="${item_id}">
-        </th:block>
-        <th:block th:unless="${theme.id==0}">
-            3  <input type="hidden" name="item" th:value="${theme.item.id}">
-        </th:block>
-    <label for="name"> Name: </label>
-    <input type="text" class="form-control" th:field="*{name}" id="name"  required placeholder="Input Subject">
+            <th:block th:if="${theme.id==0}">
+                <input type="hidden" name="item" th:value="${item_id}">
+            </th:block>
+            <th:block th:unless="${theme.id==0}">
+                <input type="hidden" name="item" th:value="${theme.item.id}">
+            </th:block>
+            <label for="name"> Name: </label>
+            <input type="text" class="form-control" th:field="*{name}" id="name" required placeholder="Input Subject">
 
-    </br>
-    <textarea class="form-control" placeholder="Input Text " th:field="*{text}" rows="20" >
-    </textarea>
-      </br>
+            </br>
+            <textarea class="form-control" placeholder="Input Text " th:field="*{text}" rows="20">
+            </textarea>
+            </br>
 
-        <input type="submit" class="btn btn-primary" value="Submit!!!">
+            <input type="submit" class="btn btn-primary" value="Submit!!!">
         </form>
 
-      <div>
-          <th:block th:unless="${theme.id==0}">
+        <div>
+            <th:block th:unless="${theme.id==0}">
 
 
-      <form th:method="DELETE" th:action="@{/themes/delete/{id}(id=${theme.getId()})}" th:object="${theme}">
-            <input type="hidden" name="item" th:value="${theme.item.id}"> -->
-            <input type="submit" value="Delete">
-        </form>
-          </th:block>
-      </div>
+                <form th:method="DELETE" th:action="@{/themes/delete/{id}(id=${theme.getId()})}" th:object="${theme}">
+                    <input type="hidden" name="item" th:value="${theme.item.id}">
+                    <input type="submit" value="Delete">
+                </form>
+            </th:block>
+        </div>
 
     </main>
     <div th:replace="fragments/footer::footer"></div>
