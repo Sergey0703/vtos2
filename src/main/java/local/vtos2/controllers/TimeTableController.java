@@ -46,8 +46,9 @@ public class TimeTableController {
         System.out.println("score");
         return "score";
     }
+
     @GetMapping("/index_admin")
-    public String showTimeTableAdmin(Model model){
+    public String showTimeTableAdmin2(Model model){
         //   List<TimeTable> listTimeTable=timeTableRepo.findAllByOrderByIdAsc();
         List<Item> itemList=itemRepo.findAll();
         model.addAttribute("items",itemList);
@@ -55,17 +56,6 @@ public class TimeTableController {
         model.addAttribute("listTimeTable",listTimeTable);
         System.out.println("indexAdmin");
         return "index_admin";
-    }
-
-    @GetMapping("/index_admin2")
-    public String showTimeTableAdmin2(Model model){
-        //   List<TimeTable> listTimeTable=timeTableRepo.findAllByOrderByIdAsc();
-        List<Item> itemList=itemRepo.findAll();
-        model.addAttribute("items",itemList);
-        List<TimeTable> listTimeTable=timeTableRepo.findAll(Sort.by(Sort.Direction.ASC, "id"));
-        model.addAttribute("listTimeTable",listTimeTable);
-        System.out.println("indexAdmin2");
-        return "index_admin2";
     }
 
     @GetMapping("/timetable/edit/{id}")
@@ -153,7 +143,7 @@ public class TimeTableController {
         }
         //timeTableRepo.save(timeTable);
         System.out.println("Save!!!");
-        return "redirect:/index_admin2";
+        return "redirect:/index_admin";
         // return null;
     }
 }

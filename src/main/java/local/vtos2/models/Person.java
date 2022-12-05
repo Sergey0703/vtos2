@@ -25,14 +25,18 @@ public class Person {
     @Temporal(TemporalType.DATE)
     private Calendar date_of_birth;
 
+    @Column(name="role")
+    private String role;
+
     public Person() {
 
     }
 
-    public Person(String username, String password, Calendar date_of_birth) {
+    public Person(String username, String password, Calendar date_of_birth, String role) {
         this.username = username;
         this.password = password;
         this.date_of_birth = date_of_birth;
+        this.role = role;
     }
 
     public int getId() {
@@ -65,6 +69,14 @@ public class Person {
 
     public void setDate_of_birth(Calendar date_of_birth) {
         this.date_of_birth = date_of_birth;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
